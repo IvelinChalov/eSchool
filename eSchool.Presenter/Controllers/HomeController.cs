@@ -9,7 +9,7 @@ using System.Text;
 
 namespace eSchool.Presenter.Controllers
 {
-	class HomeController
+	public class HomeController
 	{
 		public void LogIn(string username, string password)
 		{
@@ -17,7 +17,7 @@ namespace eSchool.Presenter.Controllers
 
 			Users user = userDAO.GetExtendedUserData(username, hashedPassword);
 
-			if (user is null) throw new ArgumentException("Грешно потребителско име или парола! Грешка");
+			if (user is null) throw new ArgumentException("Грешно потребителско име или парола!");
 
 			Session.CurrentUser = user;
 
@@ -30,7 +30,7 @@ namespace eSchool.Presenter.Controllers
 
 			Users user = userDAO.GetExtendedUserData(username, hashedPassword);
 
-			if (user != null) throw new ArgumentException("Потребителското име е заето! Грешка");
+			if (user != null) throw new ArgumentException("Потребителското име е заето! ");
 
 			Roles role = roleDAO.GetRoleByName(roleName);
 

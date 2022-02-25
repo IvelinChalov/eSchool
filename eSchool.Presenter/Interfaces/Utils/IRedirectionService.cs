@@ -1,6 +1,6 @@
 ﻿namespace eSchool.Presenter.Interfaces.Utils
 {
-	interface IRedirectionService
+	public interface IRedirectionService
 	{
 		void Redirect(string roleName);
 	}

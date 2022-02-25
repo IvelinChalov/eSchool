@@ -2,7 +2,7 @@
 
 namespace eSchool.Presenter.Interfaces.Services
 {
-	interface IUserDAO
+	public interface IUserDAO
 	{
 		Users GetExtendedUserData(string username, string password);
 		Users GetExtendedUserData(string username);
