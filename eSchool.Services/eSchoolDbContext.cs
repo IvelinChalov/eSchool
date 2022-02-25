@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using eSchool.Presenter.Models;
+using eSchool.Services.Models;
 
-namespace eSchool.Presenter
+namespace eSchool.Services
 {
     public partial class eSchoolDbContext : DbContext
     {

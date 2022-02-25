@@ -1,11 +1,12 @@
 ﻿using Autofac;
 using eSchool.Presenter.Controllers;
-using eSchool.Presenter.Interfaces.Services;
 using eSchool.Presenter.Interfaces.Utils;
 using eSchool.Presenter.Interfaces.Views;
 using eSchool.Presenter.Presenter;
-using eSchool.Presenter.Services;
 using eSchool.Presenter.Utils;
+using eSchool.Services;
+using eSchool.Services.DAL;
+using eSchool.Services.Interfaces;
 
 namespace eSchool.Presenter.Autofac
 {

@@ -1,12 +1,12 @@
-﻿using eSchool.Presenter.Interfaces.Services;
-using eSchool.Presenter.Models;
+﻿using eSchool.Services.Interfaces;
+using eSchool.Services.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
-namespace eSchool.Presenter.Services
+namespace eSchool.Services.DAL
 {
-	class UserDAO : IUserDAO
+	public class UserDAO : IUserDAO
 	{
 		public Users GetExtendedUserData(string username, string password)
 		{

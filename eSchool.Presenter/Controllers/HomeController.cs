@@ -1,7 +1,7 @@
-﻿using eSchool.Presenter.Interfaces.Services;
-using eSchool.Presenter.Interfaces.Utils;
-using eSchool.Presenter.Models;
+﻿using eSchool.Presenter.Interfaces.Utils;
 using eSchool.Presenter.Utils;
+using eSchool.Services.Interfaces;
+using eSchool.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;

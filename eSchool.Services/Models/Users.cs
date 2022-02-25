@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace eSchool.Presenter.Models
+namespace eSchool.Services.Models
 {
     public partial class Users
     {

@@ -5,6 +5,7 @@ using System.Text;
 
 namespace eSchool.Presenter
 {
+	//Бележка Трябва да се добави допълнителен NUget при разделянето на проектите
 	class Program
 	{
 		static void Main(string[] args)

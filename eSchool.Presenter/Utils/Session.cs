@@ -1,4 +1,4 @@
-﻿using eSchool.Presenter.Models;
+﻿using eSchool.Services.Models;
 
 namespace eSchool.Presenter.Utils
 {

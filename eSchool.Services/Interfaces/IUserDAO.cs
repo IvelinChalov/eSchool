@@ -1,6 +1,6 @@
-﻿using eSchool.Presenter.Models;
+﻿using eSchool.Services.Models;
 
-namespace eSchool.Presenter.Interfaces.Services
+namespace eSchool.Services.Interfaces
 {
 	public interface IUserDAO
 	{

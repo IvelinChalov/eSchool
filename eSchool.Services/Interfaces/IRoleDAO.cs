@@ -1,7 +1,7 @@
-﻿using eSchool.Presenter.Models;
+﻿using eSchool.Services.Models;
 using System.Collections.Generic;
 
-namespace eSchool.Presenter.Interfaces.Services
+namespace eSchool.Services.Interfaces
 {
 	public interface IRoleDAO
 	{

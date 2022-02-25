@@ -1,7 +1,7 @@
 ﻿using eSchool.Presenter.Controllers;
-using eSchool.Presenter.Interfaces.Services;
 using eSchool.Presenter.Interfaces.Utils;
-using eSchool.Presenter.Models;
+using eSchool.Services.Interfaces;
+using eSchool.Services.Models;
 using Moq;
 using NUnit.Framework;
 using System;

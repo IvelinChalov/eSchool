@@ -1,6 +1,6 @@
 ﻿using eSchool.Presenter.Controllers;
-using eSchool.Presenter.Models;
 using eSchool.Presenter.Utils;
+using eSchool.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

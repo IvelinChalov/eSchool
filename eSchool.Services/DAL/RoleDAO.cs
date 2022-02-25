@@ -1,12 +1,12 @@
-﻿using eSchool.Presenter.Interfaces.Services;
-using eSchool.Presenter.Models;
+﻿using eSchool.Services.Interfaces;
+using eSchool.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace eSchool.Presenter.Services
+namespace eSchool.Services.DAL
 {
-	class RoleDAO : IRoleDAO
+	public class RoleDAO : IRoleDAO
 	{
 		public Roles GetRoleByName(string roleName)
 		{
