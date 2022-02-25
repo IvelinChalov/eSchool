@@ -1,8 +1,7 @@
-﻿using eSchool.Presenter.Models;
+﻿using eSchool.Presenter.Interfaces.Services;
+using eSchool.Presenter.Models;
 using eSchool.Presenter.Presenter;
-using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,17 +9,11 @@ namespace eSchool.Presenter.Controllers
 {
 	class HomeController
 	{
-
-		private eSchoolDbContext eSchoolDbContext = new eSchoolDbContext();
-
 		public void LogIn(string username, string password)
 		{
 			string hashedPassword = HashPassword(password);
 
-			Users user = eSchoolDbContext.Users
-						  .Include(u => u.Roles)
-						  .Where(u => u.Username.Equals(username) && u.Password.Equals(hashedPassword))
-						 .FirstOrDefault();
+			Users user = userDAO.GetExtendedUserData(username, hashedPassword);
 
 			if (user is null) throw new ArgumentException("Грешно потребителско име или парола! Грешка");
 			Redirect(user);
@@ -30,16 +23,26 @@ namespace eSchool.Presenter.Controllers
 		{
 			string hashedPassword = HashPassword(password);
 
-			Users user = eSchoolDbContext.Users
-						 .Where(u => u.Username.Equals(username) && u.Password.Equals(hashedPassword))
-						 .FirstOrDefault();
+			Users user = userDAO.GetExtendedUserData(username, hashedPassword);
 
 			if (user != null) throw new ArgumentException("Потребителското име е заето! Грешка");
 
-			Roles role = eSchoolDbContext.Roles.Where(x => x.Name.Equals(roleName)).FirstOrDefault();
+			Roles role = roleDAO.GetRoleByName(roleName);
 
-			eSchoolDbContext.Users.Add(new Users() { Username = username, Password = hashedPassword, Roles = role });
-			eSchoolDbContext.SaveChanges();
+			Users newUser = new Users() { Username = username, Password = hashedPassword, Roles = role };
+			userDAO.AddUser(newUser);
+		}
+
+		private IUserDAO userDAO;
+		private IRoleDAO roleDAO;
+
+		public HomeController(IUserDAO userDAO, IRoleDAO roleDAO)
+		{
+			if (userDAO is null) throw new ArgumentException("userDAO");
+			if (roleDAO is null) throw new ArgumentException("roleDAO");
+
+			this.userDAO = userDAO;
+			this.roleDAO = roleDAO;
 		}
 
 		private string HashPassword(string password)
