@@ -1,5 +1,5 @@
-﻿using eSchool.Presenter.Interfaces.Utils;
-using eSchool.Presenter.Utils;
+﻿using eSchool.Controller.Utils;
+using eSchool.Interfaces.Utils;
 using eSchool.Services.Interfaces;
 using eSchool.Services.Models;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace eSchool.Presenter.Controllers
+namespace eSchool.Controller
 {
 	public class HomeController
 	{
@@ -68,6 +68,5 @@ namespace eSchool.Presenter.Controllers
 			var encoding = new UnicodeEncoding();
 			return Convert.ToBase64String(provider.ComputeHash(encoding.GetBytes(password)));
 		}
-
 	}
 }

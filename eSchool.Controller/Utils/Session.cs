@@ -1,8 +1,8 @@
 ﻿using eSchool.Services.Models;
 
-namespace eSchool.Presenter.Utils
+namespace eSchool.Controller.Utils
 {
-	static class Session
+	public static class Session
 	{
 		public static Users CurrentUser { get; set; }
 	}

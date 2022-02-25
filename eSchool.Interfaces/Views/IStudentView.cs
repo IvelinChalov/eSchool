@@ -1,4 +1,4 @@
-﻿namespace eSchool.Presenter.Interfaces.Views
+﻿namespace eSchool.Interfaces.Views
 {
 	public interface IStudentView
 	{

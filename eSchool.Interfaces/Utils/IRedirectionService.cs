@@ -1,4 +1,4 @@
-﻿namespace eSchool.Presenter.Interfaces.Utils
+﻿namespace eSchool.Interfaces.Utils
 {
 	public interface IRedirectionService
 	{

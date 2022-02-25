@@ -1,8 +1,8 @@
-﻿using eSchool.Presenter.Interfaces.Utils;
-using eSchool.Presenter.Interfaces.Views;
+﻿using eSchool.Interfaces.Utils;
+using eSchool.Interfaces.Views;
 using System;
 
-namespace eSchool.Presenter.Utils
+namespace eSchool.Controller.Utils
 {
 	public class RedirectionService : IRedirectionService
 	{

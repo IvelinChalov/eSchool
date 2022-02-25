@@ -1,5 +1,5 @@
-﻿using eSchool.Presenter.Controllers;
-using eSchool.Presenter.Interfaces.Utils;
+﻿using eSchool.Controller;
+using eSchool.Interfaces.Utils;
 using eSchool.Services.Interfaces;
 using eSchool.Services.Models;
 using Moq;

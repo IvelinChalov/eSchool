@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using eSchool.Presenter.Controllers;
-using eSchool.Presenter.Interfaces.Utils;
-using eSchool.Presenter.Interfaces.Views;
+using eSchool.Controller;
+using eSchool.Controller.Utils;
+using eSchool.Interfaces.Utils;
+using eSchool.Interfaces.Views;
 using eSchool.Presenter.Presenter;
-using eSchool.Presenter.Utils;
 using eSchool.Services;
 using eSchool.Services.DAL;
 using eSchool.Services.Interfaces;
