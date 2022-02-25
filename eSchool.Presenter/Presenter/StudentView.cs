@@ -13,11 +13,11 @@ namespace eSchool.Presenter.Presenter
 			while (true)
 			{
 				Console.WriteLine(new string('-', 40));
-				Console.WriteLine(new string(' ', 10) + $"WELCOME {Session.CurrentUser.Username}" + new string(' ', 18));
+				Console.WriteLine(new string(' ', 10) + $"Добре дошъл {Session.CurrentUser.Username}" + new string(' ', 18));
 				Console.WriteLine(new string('-', 40));
-				Console.WriteLine("1. Check marks");
-				Console.WriteLine("2. Check curriculum");
-				Console.WriteLine("3. Logout");
+				Console.WriteLine("1. Проверка на оценки");
+				Console.WriteLine("2. Проверка на предмети");
+				Console.WriteLine("3. Излизане от профила");
 
 				int command;
 				if (int.TryParse(Console.ReadLine(), out command))

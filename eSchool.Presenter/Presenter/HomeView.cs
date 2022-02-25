@@ -15,11 +15,11 @@ namespace eSchool.Presenter.Presenter
 			while (true)
 			{
 				Console.WriteLine(new string('-', 40));
-				Console.WriteLine(new string(' ', 10) + "WELCOME TO eSchool" + new string(' ', 18));
+				Console.WriteLine(new string(' ', 10) + "Добре дошли в eSchool" + new string(' ', 18));
 				Console.WriteLine(new string('-', 40));
-				Console.WriteLine("1. Login");
-				Console.WriteLine("2. Register");
-				Console.WriteLine("3. Exit");
+				Console.WriteLine("1. Вход");
+				Console.WriteLine("2. Регистрация");
+				Console.WriteLine("3. Изход");
 
 				int command;
 				if (int.TryParse(Console.ReadLine(), out command))
@@ -120,9 +120,9 @@ namespace eSchool.Presenter.Presenter
 			{
 				try
 				{
-					Console.Write("Username: ");
+					Console.Write("Потребителско име: ");
 					string username = Console.ReadLine();
-					Console.Write("Password: ");
+					Console.Write("Парола: ");
 					string password = Console.ReadLine();
 
 					homeController.LogIn(username, password);
