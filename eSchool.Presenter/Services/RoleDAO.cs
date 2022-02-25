@@ -1,6 +1,7 @@
 ﻿using eSchool.Presenter.Interfaces.Services;
 using eSchool.Presenter.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace eSchool.Presenter.Services
@@ -10,6 +11,11 @@ namespace eSchool.Presenter.Services
 		public Roles GetRoleByName(string roleName)
 		{
 			return eSchoolDbContext.Roles.Where(x => x.Name.Equals(roleName)).FirstOrDefault();
+		}
+
+		public List<Roles> GetAllRoles()
+		{
+			return eSchoolDbContext.Roles.ToList();
 		}
 
 		private eSchoolDbContext eSchoolDbContext;

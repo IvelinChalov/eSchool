@@ -1,5 +1,5 @@
 ﻿using eSchool.Presenter.Interfaces.Views;
-using eSchool.Presenter.Models;
+using eSchool.Presenter.Utils;
 using System;
 
 namespace eSchool.Presenter.Presenter
@@ -13,7 +13,7 @@ namespace eSchool.Presenter.Presenter
 			while (true)
 			{
 				Console.WriteLine(new string('-', 40));
-				Console.WriteLine(new string(' ', 10) + $"WELCOME {currentUser.Username}" + new string(' ', 18));
+				Console.WriteLine(new string(' ', 10) + $"WELCOME {Session.CurrentUser.Username}" + new string(' ', 18));
 				Console.WriteLine(new string('-', 40));
 				Console.WriteLine("1. Check marks");
 				Console.WriteLine("2. Check curriculum");
@@ -33,29 +33,17 @@ namespace eSchool.Presenter.Presenter
 						case 3:
 							return;
 						default:
-							Console.ForegroundColor = ConsoleColor.Yellow;
-							Console.WriteLine("Моля въведете валидна команда! Валидация");
-							Console.ForegroundColor = ConsoleColor.White;
+							MessagingService.ShowWarningMessage("Моля въведете валидна команда!");
 							break;
 					}
 				}
 				else
 				{
-					Console.ForegroundColor = ConsoleColor.Yellow;
-					Console.WriteLine("Моля въведете число! Валидация");
-					Console.ForegroundColor = ConsoleColor.White;
+					MessagingService.ShowWarningMessage("Моля въведете число!");
 				}
 			}
 
 		}
 
-		private Users currentUser = null;
-
-		public StudentView(Users currentUser)
-		{
-			if (currentUser is null) throw new Exception("currentUser");
-
-			this.currentUser = currentUser;
-		}
 	}
 }

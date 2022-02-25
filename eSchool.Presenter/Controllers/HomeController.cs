@@ -1,8 +1,9 @@
-﻿using eSchool.Presenter.Interfaces;
-using eSchool.Presenter.Interfaces.Services;
+﻿using eSchool.Presenter.Interfaces.Services;
+using eSchool.Presenter.Interfaces.Utils;
 using eSchool.Presenter.Models;
 using eSchool.Presenter.Utils;
 using System;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -36,6 +37,15 @@ namespace eSchool.Presenter.Controllers
 			Users newUser = new Users() { Username = username, Password = hashedPassword, Roles = role };
 			userDAO.AddUser(newUser);
 		}
+
+		public List<Roles> GetAllRoles()
+		{
+			List<Roles> roles = roleDAO.GetAllRoles();
+			if (roles is null || roles.Count == 0) throw new Exception("No roles found.");
+
+			return roles;
+		}
+
 
 		private IUserDAO userDAO;
 		private IRoleDAO roleDAO;

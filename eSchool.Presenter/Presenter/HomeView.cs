@@ -1,6 +1,9 @@
 ﻿using eSchool.Presenter.Controllers;
+using eSchool.Presenter.Models;
+using eSchool.Presenter.Utils;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace eSchool.Presenter.Presenter
 {
@@ -33,17 +36,13 @@ namespace eSchool.Presenter.Presenter
 						case 3:
 							return;
 						default:
-							Console.ForegroundColor = ConsoleColor.Yellow;
-							Console.WriteLine("Моля въведете валидна команда! Валидация");
-							Console.ForegroundColor = ConsoleColor.White;
+							MessagingService.ShowWarningMessage("Моля въведете валидна команда!");
 							break;
 					}
 				}
 				else
 				{
-					Console.ForegroundColor = ConsoleColor.Yellow;
-					Console.WriteLine("Моля въведете число! Валидация");
-					Console.ForegroundColor = ConsoleColor.White;
+					MessagingService.ShowWarningMessage("Моля въведете число!");
 				}
 			}
 
@@ -67,47 +66,51 @@ namespace eSchool.Presenter.Presenter
 					Console.Write("Повторете паролата: ");
 					string repeatedPassword = Console.ReadLine();
 
-					Console.WriteLine("Изберете роля на потребителя: ");
-					Console.WriteLine("1. Ученик");
-					Console.WriteLine("2. Преподавател");
-					Console.WriteLine("3. Администратор");
-					string role = Console.ReadLine();
+					Dictionary<string, string> allRoles = ConstructRoles(homeController.GetAllRoles());
 
-					Dictionary<string, string> roles = new Dictionary<string, string>()
+					Console.WriteLine("Изберете роля на потребителя: ");
+
+					foreach (var key in allRoles)
 					{
-						{ "1", "Ученик" },
-						{ "2", "Преподавател" },
-						{ "3", "Администратор" }
-					};
+						Console.WriteLine($"{key.Key} {key.Value}");
+					}
+
+					string role = Console.ReadLine();
 
 					if (!password.Equals(repeatedPassword))
 					{
-						throw new ArgumentException("Паролите не съвпадат. Валидация");
+						throw new ArgumentException("Паролите не съвпадат.");
 					}
-					else if (roles.ContainsKey(role))
+					else if (allRoles.ContainsKey(role))
 					{
-						HomeController homeController = new HomeController();
-						homeController.Register(username, password, roles[role]);
-						Console.WriteLine("Потребителя е съсздаден.");
+						homeController.Register(username, password, allRoles[role]);
+						Console.WriteLine("Потребителя е създаден.");
 						return;
 					}
 					else
 					{
-						throw new ArgumentException("Моля изберете роля от списъка. Валидация");
+						throw new ArgumentException("Моля изберете роля от списъка.");
 					}
 
 				}
 				catch (ArgumentException e)
 				{
-					Console.ForegroundColor = ConsoleColor.Yellow;
-					Console.WriteLine(e.Message);
-					Console.ForegroundColor = ConsoleColor.White;
+					MessagingService.ShowWarningMessage(e.Message);
 
 					Console.Write("Желаете ли да опитате отново?(Д/Н): ");
 					command = Console.ReadLine();
 				}
 
 			}
+		}
+
+		private HomeController homeController;
+
+		public HomeView(HomeController homeController)
+		{
+			if (homeController is null) new ArgumentException("homeController");
+
+			this.homeController = homeController;
 		}
 
 		private void LoginUser()
@@ -122,16 +125,12 @@ namespace eSchool.Presenter.Presenter
 					Console.Write("Password: ");
 					string password = Console.ReadLine();
 
-					HomeController homeController = new HomeController();
 					homeController.LogIn(username, password);
 					break;
 				}
 				catch (ArgumentException e)
 				{
-					Console.ForegroundColor = ConsoleColor.Red;
-					Console.WriteLine(e.Message);
-					Console.ForegroundColor = ConsoleColor.White;
-
+					MessagingService.ShowErrorMessage(e.Message);
 					Console.Write("Желаете ли да опитате отново?(Д/Н): ");
 					command = Console.ReadLine();
 				}
@@ -140,5 +139,17 @@ namespace eSchool.Presenter.Presenter
 
 		}
 
+		private Dictionary<string, string> ConstructRoles(List<Roles> roles)
+		{
+			Dictionary<string, string> rolesDictionary = new Dictionary<string, string>();
+			int num = 1;
+			foreach (var role in roles.OrderBy(r => r.Name))
+			{
+				rolesDictionary.Add(num.ToString(), role.Name);
+				num++;
+			}
+
+			return rolesDictionary;
+		}
 	}
 }
