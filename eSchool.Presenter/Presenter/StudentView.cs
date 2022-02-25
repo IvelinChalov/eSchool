@@ -1,9 +1,10 @@
-﻿using eSchool.Presenter.Models;
+﻿using eSchool.Presenter.Interfaces.Views;
+using eSchool.Presenter.Models;
 using System;
 
 namespace eSchool.Presenter.Presenter
 {
-	class StudentView
+	class StudentView : IStudentView
 	{
 
 		public void StudentMenu()

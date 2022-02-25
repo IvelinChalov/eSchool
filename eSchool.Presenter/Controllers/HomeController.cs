@@ -1,6 +1,7 @@
-﻿using eSchool.Presenter.Interfaces.Services;
+﻿using eSchool.Presenter.Interfaces;
+using eSchool.Presenter.Interfaces.Services;
 using eSchool.Presenter.Models;
-using eSchool.Presenter.Presenter;
+using eSchool.Presenter.Utils;
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,7 +17,10 @@ namespace eSchool.Presenter.Controllers
 			Users user = userDAO.GetExtendedUserData(username, hashedPassword);
 
 			if (user is null) throw new ArgumentException("Грешно потребителско име или парола! Грешка");
-			Redirect(user);
+
+			Session.CurrentUser = user;
+
+			redirectionService.Redirect(user.Roles.Name);
 		}
 
 		public void Register(string username, string password, string roleName)
@@ -35,14 +39,17 @@ namespace eSchool.Presenter.Controllers
 
 		private IUserDAO userDAO;
 		private IRoleDAO roleDAO;
+		private IRedirectionService redirectionService;
 
-		public HomeController(IUserDAO userDAO, IRoleDAO roleDAO)
+		public HomeController(IUserDAO userDAO, IRoleDAO roleDAO, IRedirectionService redirectionService)
 		{
 			if (userDAO is null) throw new ArgumentException("userDAO");
 			if (roleDAO is null) throw new ArgumentException("roleDAO");
+			if (redirectionService is null) throw new ArgumentException("redirectionService");
 
 			this.userDAO = userDAO;
 			this.roleDAO = roleDAO;
+			this.redirectionService = redirectionService;
 		}
 
 		private string HashPassword(string password)
@@ -52,29 +59,5 @@ namespace eSchool.Presenter.Controllers
 			return Convert.ToBase64String(provider.ComputeHash(encoding.GetBytes(password)));
 		}
 
-		private void Redirect(Users user)
-		{
-			switch (user.Roles.Name)
-			{
-				case "Преподавател":
-					{
-						//TODO Add controller
-					}
-					break;
-				case "Ученик":
-					{
-						StudentView studentView = new StudentView(user);
-						studentView.StudentMenu();
-					}
-					break;
-				case "Администратор":
-					{
-						//TODO Add controller
-					}
-					break;
-				default:
-					break;
-			}
-		}
 	}
 }
