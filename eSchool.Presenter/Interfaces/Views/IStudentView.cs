@@ -1,6 +1,6 @@
 ﻿namespace eSchool.Presenter.Interfaces.Views
 {
-	interface IStudentView
+	public interface IStudentView
 	{
 		void StudentMenu();
 	}

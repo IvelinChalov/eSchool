@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace eSchool.Presenter.Presenter
 {
-	class HomeView
+	public class HomeView
 	{
 		public void HomeMenu()
 		{

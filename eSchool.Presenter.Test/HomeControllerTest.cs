@@ -12,11 +12,6 @@ namespace eSchool.Presenter.Test
 {
 	public class HomeControllerTest
 	{
-		[SetUp]
-		public void Setup()
-		{
-
-		}
 
 		[Test]
 		public void LogIn_UserEntersWrongeCredentials()

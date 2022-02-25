@@ -4,7 +4,7 @@ using System;
 
 namespace eSchool.Presenter.Presenter
 {
-	class StudentView : IStudentView
+	public class StudentView : IStudentView
 	{
 
 		public void StudentMenu()

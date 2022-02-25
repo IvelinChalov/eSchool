@@ -4,7 +4,7 @@ using System;
 
 namespace eSchool.Presenter.Utils
 {
-	class RedirectionService : IRedirectionService
+	public class RedirectionService : IRedirectionService
 	{
 		public void Redirect(string roleName)
 		{

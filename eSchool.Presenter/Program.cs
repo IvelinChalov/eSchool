@@ -1,7 +1,5 @@
-﻿using eSchool.Presenter.Controllers;
-using eSchool.Presenter.Presenter;
-using eSchool.Presenter.Services;
-using eSchool.Presenter.Utils;
+﻿using Autofac;
+using eSchool.Presenter.Autofac;
 using System;
 using System.Text;
 
@@ -13,15 +11,25 @@ namespace eSchool.Presenter
 		{
 			Console.OutputEncoding = Console.InputEncoding = Encoding.Unicode;
 
-			eSchoolDbContext eSchoolDbContext = new eSchoolDbContext();
-			StudentView studentView = new StudentView();
+			//eSchoolDbContext eSchoolDbContext = new eSchoolDbContext();
+			//StudentView studentView = new StudentView();
 
-			HomeController homeController = new HomeController(new UserDAO(eSchoolDbContext),
-																new RoleDAO(eSchoolDbContext),
-																new RedirectionService(studentView));
-			HomeView homeView = new HomeView(homeController);
+			//HomeController homeController = new HomeController(new UserDAO(eSchoolDbContext),
+			//													new RoleDAO(eSchoolDbContext),
+			//													new RedirectionService(studentView));
+			//HomeView homeView = new HomeView(homeController);
 
-			homeView.HomeMenu();
+			//homeView.HomeMenu();
+			var container = ContainerConfig.Configure();
+
+			using (var scope = container.BeginLifetimeScope())
+			{
+				Application application = scope.Resolve<Application>();
+
+				application.Run();
+			}
+
+
 		}
 	}
 }
