@@ -29,7 +29,7 @@ namespace eSchool.Presenter.Autofac
 			//Utils
 			builder.RegisterType<RedirectionService>().As<IRedirectionService>();
 			//DbContext
-			//builder.RegisterInstance<eSchoolDbContext>(new EvilInfoDBContext());
+			//builder.RegisterInstance<eSchoolDbContext>(new eSchoolDbContext());
 			builder.RegisterType<eSchoolDbContext>();
 
 			//Main
