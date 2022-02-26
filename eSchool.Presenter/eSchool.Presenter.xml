@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>eSchool.Presenter</name>
+    </assembly>
+    <members>
+        <member name="T:eSchool.Presenter.Autofac.ContainerConfig">
+            <summary>
+            Helper class for configuring Autofac dependancy injection container
+            </summary>
+        </member>
+        <member name="M:eSchool.Presenter.Autofac.ContainerConfig.Configure">
+            <summary>
+            Configures autofac
+            </summary>
+            <returns>The container used for the entire lifespan of the application</returns>
+        </member>
+        <member name="T:eSchool.Presenter.Presenter.HomeView">
+            <summary>
+            Allows visualization of basic menus
+            </summary>
+            <remarks>
+            These are the menus for non registered users
+            </remarks>
+        </member>
+        <member name="M:eSchool.Presenter.Presenter.HomeView.HomeMenu">
+            <summary>
+            Menue for entry point of the application
+            </summary>
+        </member>
+        <member name="M:eSchool.Presenter.Presenter.HomeView.RegisterUser">
+            <summary>
+            Menu for registering new users
+            </summary>
+        </member>
+        <member name="M:eSchool.Presenter.Presenter.HomeView.#ctor(eSchool.Controller.HomeController)">
+            <summary>
+            Constructor for dependancy injection
+            </summary>
+            <param name="homeController">The controller associated with this view</param>
+        </member>
+        <member name="M:eSchool.Presenter.Presenter.HomeView.LoginUser">
+            <summary>
+            Menu for logging users
+            </summary>
+        </member>
+        <member name="M:eSchool.Presenter.Presenter.HomeView.ConstructRoles(System.Collections.Generic.List{eSchool.Services.Models.Roles})">
+            <summary>
+            Creates dictionary of <see cref="T:eSchool.Services.Models.Roles">Roles</see>
+            </summary>
+            <param name="roles">All the roles from the database</param>
+            <returns>Dictionary with all the roles</returns>
+        </member>
+    </members>
+</doc>

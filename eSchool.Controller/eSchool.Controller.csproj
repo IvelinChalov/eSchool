@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>E:\IT Kariera\Разработка на софтуер\8. Създаване-на-приложения-с-няколко-потребителски-интерфейса\Projects\eSchool\eSchool.Controller\eSchool.Controller.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\eSchool.Interfaces\eSchool.Interfaces.csproj" />
     <ProjectReference Include="..\eSchool.Services\eSchool.Services.csproj" />

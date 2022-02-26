@@ -7,8 +7,17 @@ using System.Linq;
 
 namespace eSchool.Presenter.Presenter
 {
+	/// <summary>
+	/// Allows visualization of basic menus
+	/// </summary>
+	/// <remarks>
+	/// These are the menus for non registered users
+	/// </remarks>
 	public class HomeView
 	{
+		/// <summary>
+		/// Menue for entry point of the application
+		/// </summary>
 		public void HomeMenu()
 		{
 
@@ -50,6 +59,9 @@ namespace eSchool.Presenter.Presenter
 
 		}
 
+		/// <summary>
+		/// Menu for registering new users
+		/// </summary>
 		private void RegisterUser()
 		{
 			string command = "Д";
@@ -106,6 +118,10 @@ namespace eSchool.Presenter.Presenter
 
 		private HomeController homeController;
 
+		/// <summary>
+		/// Constructor for dependancy injection
+		/// </summary>
+		/// <param name="homeController">The controller associated with this view</param>
 		public HomeView(HomeController homeController)
 		{
 			if (homeController is null) new ArgumentException("homeController");
@@ -113,6 +129,9 @@ namespace eSchool.Presenter.Presenter
 			this.homeController = homeController;
 		}
 
+		/// <summary>
+		/// Menu for logging users
+		/// </summary>
 		private void LoginUser()
 		{
 			string command = "Д";
@@ -139,6 +158,11 @@ namespace eSchool.Presenter.Presenter
 
 		}
 
+		/// <summary>
+		/// Creates dictionary of <see cref="Roles">Roles</see>
+		/// </summary>
+		/// <param name="roles">All the roles from the database</param>
+		/// <returns>Dictionary with all the roles</returns>
 		private Dictionary<string, string> ConstructRoles(List<Roles> roles)
 		{
 			Dictionary<string, string> rolesDictionary = new Dictionary<string, string>();
