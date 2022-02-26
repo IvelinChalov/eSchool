@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSchool.Controller", "eScho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSchool.Interfaces", "eSchool.Interfaces\eSchool.Interfaces.csproj", "{E0773CE9-0C2A-4E4B-A5E9-0D5AD4AF9544}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSchool.Presenter.Forms", "eSchool.Presenter.Forms\eSchool.Presenter.Forms.csproj", "{559D82F1-5510-4615-B268-814F1D2BF891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E0773CE9-0C2A-4E4B-A5E9-0D5AD4AF9544}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0773CE9-0C2A-4E4B-A5E9-0D5AD4AF9544}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0773CE9-0C2A-4E4B-A5E9-0D5AD4AF9544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{559D82F1-5510-4615-B268-814F1D2BF891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{559D82F1-5510-4615-B268-814F1D2BF891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{559D82F1-5510-4615-B268-814F1D2BF891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{559D82F1-5510-4615-B268-814F1D2BF891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

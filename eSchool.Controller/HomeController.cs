@@ -21,7 +21,7 @@ namespace eSchool.Controller
 
 			Session.CurrentUser = user;
 
-			redirectionService.Redirect(user.Roles.Name);
+			redirectionService?.Redirect(user.Roles.Name);
 		}
 
 		public void Register(string username, string password, string roleName)
@@ -61,6 +61,7 @@ namespace eSchool.Controller
 			this.roleDAO = roleDAO;
 			this.redirectionService = redirectionService;
 		}
+
 
 		private string HashPassword(string password)
 		{

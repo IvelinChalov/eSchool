@@ -17,7 +17,7 @@ namespace eSchool.Controller.Utils
 					break;
 				case "Ученик":
 					{
-						studentView.StudentMenu();
+						studentView.ShowStudentMenu();
 					}
 					break;
 				case "Администратор":

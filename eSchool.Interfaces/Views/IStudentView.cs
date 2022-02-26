@@ -2,6 +2,6 @@
 {
 	public interface IStudentView
 	{
-		void StudentMenu();
+		void ShowStudentMenu();
 	}
 }

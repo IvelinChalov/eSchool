@@ -8,7 +8,7 @@ namespace eSchool.Presenter.Presenter
 	public class StudentView : IStudentView
 	{
 
-		public void StudentMenu()
+		public void ShowStudentMenu()
 		{
 
 			while (true)
