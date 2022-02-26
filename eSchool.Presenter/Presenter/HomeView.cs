@@ -88,7 +88,7 @@ namespace eSchool.Presenter.Presenter
 					{
 						HomeController homeController = new HomeController();
 						homeController.Register(username, password, roles[role]);
-						Console.WriteLine("Потребителя е съсздаден.");
+						Console.WriteLine("Потребителя е създаден.");
 						return;
 					}
 					else

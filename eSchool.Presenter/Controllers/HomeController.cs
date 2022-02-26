@@ -30,8 +30,11 @@ namespace eSchool.Presenter.Controllers
 		{
 			string hashedPassword = HashPassword(password);
 
+			//Users user = eSchoolDbContext.Users
+			//			 .Where(u => u.Username.Equals(username) && u.Password.Equals(hashedPassword))
+			//			 .FirstOrDefault();
 			Users user = eSchoolDbContext.Users
-						 .Where(u => u.Username.Equals(username) && u.Password.Equals(hashedPassword))
+						 .Where(u => u.Username.Equals(username))
 						 .FirstOrDefault();
 
 			if (user != null) throw new ArgumentException("Потребителското име е заето! Грешка");
