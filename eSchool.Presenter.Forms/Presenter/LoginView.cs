@@ -34,8 +34,8 @@ namespace eSchool.Presenter.Forms.Presenter
 
 		private void exitButton_Click(object sender, EventArgs e)
 		{
-			this.Close();
 			FormFactory.GetFormInstance<HomeView>().Show();
+			this.Hide();
 		}
 
 		private void LoginView_FormClosed(object sender, FormClosedEventArgs e)
