@@ -62,6 +62,7 @@ namespace eSchool.Presenter.Presenter
 		/// <summary>
 		/// Menu for registering new users
 		/// </summary>
+		/// <exception cref="System.ArgumentException">Throws when user enters unvalid values</exception>
 		private void RegisterUser()
 		{
 			string command = "Д";

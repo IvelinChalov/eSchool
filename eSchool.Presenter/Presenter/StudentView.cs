@@ -5,9 +5,14 @@ using System;
 
 namespace eSchool.Presenter.Presenter
 {
+	/// <summary>
+	/// Encapsulates all student views
+	/// </summary>
 	public class StudentView : IStudentView
 	{
-
+		/// <summary>
+		/// Main menu for Student data
+		/// </summary>
 		public void ShowStudentMenu()
 		{
 

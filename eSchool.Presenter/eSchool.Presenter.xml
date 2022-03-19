@@ -32,6 +32,7 @@
             <summary>
             Menu for registering new users
             </summary>
+            <exception cref="T:System.ArgumentException">Throws when user enters unvalid values</exception>
         </member>
         <member name="M:eSchool.Presenter.Presenter.HomeView.#ctor(eSchool.Controller.HomeController)">
             <summary>
@@ -50,6 +51,16 @@
             </summary>
             <param name="roles">All the roles from the database</param>
             <returns>Dictionary with all the roles</returns>
+        </member>
+        <member name="T:eSchool.Presenter.Presenter.StudentView">
+            <summary>
+            Encapsulates all student views
+            </summary>
+        </member>
+        <member name="M:eSchool.Presenter.Presenter.StudentView.ShowStudentMenu">
+            <summary>
+            Main menu for Student data
+            </summary>
         </member>
     </members>
 </doc>
